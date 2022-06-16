@@ -16,6 +16,13 @@
                           <p>{{$fumetto->type}}</p>
                           <h5>$ {{$fumetto->price}}</h5>
                           <a href="{{route('comics.show', $fumetto->id)}}" class="btn btn-primary">vai alla descrizione</a>
+                          <a href="{{route('comics.edit', $fumetto->id)}}" class="btn btn-primary">modifica fumetto</a>
+                          <form action="{{route('comics.destroy', $fumetto->id)}}" method="post">
+                            @csrf
+                            @method('delete')
+                             <button class="btn btn-primary" type="submit">elimina fumetto </button>
+                          </form>
+                          
                         </div>
                       </div>
                 </div>
